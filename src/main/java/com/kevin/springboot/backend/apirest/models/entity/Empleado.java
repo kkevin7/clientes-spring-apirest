@@ -14,8 +14,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="clientes")
-public class Cliente implements Serializable{
+@Table(name="empleados")
+public class Empleado implements Serializable{
 
 	/**
 	 * 
@@ -29,9 +29,11 @@ public class Cliente implements Serializable{
 	@Column(nullable = false)
 	private String nombre;
 	
+	@Column(nullable = false)
 	private String apellido;
-	@Column(nullable=false, unique = true)
-	private String email;
+	
+	@Column(nullable = false)
+	private String empresa;
 	
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
@@ -60,11 +62,11 @@ public class Cliente implements Serializable{
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmpresa() {
+		return empresa;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
 	}
 	public Date getCreateAt() {
 		return createAt;
@@ -72,6 +74,5 @@ public class Cliente implements Serializable{
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
 	}
-	
-	
+
 }
